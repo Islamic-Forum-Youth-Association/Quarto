@@ -1,0 +1,167 @@
+---
+title: "Quarto"
+author: "The Islamic Forum of Canada Youth Association"
+toc: true
+date: "2/24/2024"
+number-sections: true
+format: 
+  html:
+    css: example.css
+    html-math-method: katex
+  pdf:
+    documentclass: report
+    margin-left: 30mm
+    margin-right: 30mm
+project:
+  post-render:
+     - powershell $PSVersionTable.PSVersion
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## An introduction to Quarto
+
+### What is Quarto?
+
+> Quarto is a multi-language, next generation version of R Markdown from Posit. Quarto leverages the power of knitr to execute R code seamlessly within its documents, allowing users to embed R code chunks directly alongside their markdown content. This integration enables users to perform data analysis, generate dynamic visualizations, and incorporate statistical computations directly into their documents.
+
+### What can Quarto do?
+
+1.  Weave narrative next and code
+2.  Produces webpages, documents, blogs, books, and more!
+
+Quarto has its use in making technical documents, and has wide appeal in scientific discourse.
+
+Quarto has no reliance on R necessarily, it was intentionally designed to be run with multiple languages in mind. And much in the same way as Jupytr notebook allows for:
+
+## Running Code
+
+Python
+
+```{python}
+"""
+Your very first line of code, how cute!
+"""
+print("Hello world from a Python Runtime!")
+random_val = 'python' + ' is cool'
+print(random_val)
+```
+
+R
+
+```{r}
+# Function, takes a name and preprends "Hell from R" to the name
+myFunction <- function(name){
+  paste("Hello from R,", name );
+}
+
+# Vector of names
+names <- c("John", "Jacob", "Rob", "Sue");
+
+# Looping through the names and calling myFunction
+for (name in names){
+  print(myFunction(name));
+}
+
+
+```
+
+You can also graph data in these projects with the code you use in these blocks below!
+
+```{python}
+
+import matplotlib.pyplot as plt
+plt.plot([1,23,2,4])
+plt.show()
+
+```
+
+You can insert images too! (Debugging headache from when I made this document) [😔](https://emojipedia.org/pensive-face)
+
+![](images/clipboard-1825246074.png)
+
+Or in R
+
+```{r}
+library(ggplot2)
+
+# Sample data
+set.seed(42)
+data <- data.frame(
+  x = rnorm(100),
+  y = rnorm(100)
+)
+
+# Create a ggplot object
+p <- ggplot(data, aes(x = x, y = y)) +
+  geom_point(color = "blue") +
+  labs(
+    title = "Scatter Plot",
+    x = "X-axis",
+    y = "Y-axis"
+  ) +
+  theme_minimal()
+
+# Display the plot
+print(p)
+
+
+```
+
+You are not limited to only R and Python. For instance you can run shell commands from within Quarto:
+
+```{bash}
+neofetch
+```
+
+Note to self : To check with Sayyid Muzzammil as to why Quarto is acessing WSL
+
+```{sh}
+whoami
+```
+
+We can also include dashboards in our documents in Quarto , using in-built shiny components such as `tabsets`
+
+::: panel-tabset
+## Code
+
+```{ojs}
+Plot.rectY(data, 
+  Plot.stackY(
+    Plot.binX( 
+      {y: "count"}, 
+      {x: "body_mass_g", fill: "species", thresholds: 20})
+    )
+  ).plot({
+    facet: {
+      data,
+      x: "sex"
+    },
+    marks: [Plot.frame()]
+  })
+```
+
+## Data
+
+```{ojs}
+Inputs.table(filtered)
+```
+:::
+
+Functionality can also be imported by use of javascript
+
+And sytling can also be imported by use of cascading stylesheets
+
+## Today you will:
+
+-   Create a Quarto document proposing a project to be done for the IFCYA.
+-   Propose a tech-stack to be used for the project.
+-   (Extra) Incorporate as much *flair* as you would like by means of incorporating Javascript and CSS into your document. (Modifying by class or id). For more information please visit their respective documentation pages or ask us for assistance if necessary.
+
+$$
+ f(x) = \frac{1}{\sigma \sqrt{2 \pi}}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}
+$$
+
+\[1\] Note : Heres a really nice write up by the Quarto team on layouts such as the tabpanel set you had seen earlier :)
