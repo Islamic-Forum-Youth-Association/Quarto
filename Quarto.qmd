@@ -158,7 +158,15 @@ And sytling can also be imported by use of cascading stylesheets
 
 -   Create a Quarto document proposing a project to be done for the IFCYA.
 -   Propose a tech-stack to be used for the project.
--   (Extra) Incorporate as much *flair* as you would like by means of incorporating Javascript and CSS into your document. (Modifying by class or id). For more information please visit their respective documentation pages or ask us for assistance if necessary.
+-   (Extra) Incorporate as much *flair* as you would like by means of incorporating Javascript and CSS into your document. (Modifying by class or id). 
+## Information on deliverable:
+
+  Create a Quarto document with :
+- a custom div
+- a button
+- popup
+- in addition to the project outlined above
+For more information please visit their respective documentation pages or ask us for assistance if necessary.
 
 $$
  f(x) = \frac{1}{\sigma \sqrt{2 \pi}}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}
